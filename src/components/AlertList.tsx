@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import colors from '../theme/colors';
 
 interface AlertListProps {
     children: React.ReactNode;
@@ -6,7 +7,7 @@ interface AlertListProps {
 }
 
 const StyledAlertList = styled.div<AlertListProps>`
-    background-color: ${props => props.variant === 'success' ? 'rgb(151, 176, 157)' : 'rgb(228, 84, 84)'};
+    background-color: ${props => props.variant === 'success' ? colors.green : colors.red};
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -20,8 +21,7 @@ const StyledAlertList = styled.div<AlertListProps>`
     padding-inline-start: 40px;
     `;
 
-const AlertList = ({children, variant}: AlertListProps) => (
+const AlertList = ({children, variant}: AlertListProps) =>
     <StyledAlertList variant={variant}>{children}</StyledAlertList>
-)
 
 export default AlertList;

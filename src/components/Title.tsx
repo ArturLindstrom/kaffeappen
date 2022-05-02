@@ -11,12 +11,9 @@ const Title = styled.h1`
     text-align: center;
     `;
 
-    const TitleComponent = ({children}: TitleProps) => {
-        return (
+    const TitleComponent = ({children}: TitleProps) =>
             <Title>
                 {children}
             </Title>
-        );
-    }
 
 export default TitleComponent;

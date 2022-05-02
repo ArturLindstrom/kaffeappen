@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import colors from '../theme/colors'
 
 interface TextboxProps {
     placeholder?: string,
@@ -12,16 +13,16 @@ const StyledTextbox = styled.input<TextboxProps>`
     line-height: 50px;
     border-width: 1px;
     border-style: solid;
-    border-color: ${props => props.isValid ? "black" : "rgb(228, 84, 84)"};
-    background-color: ${props => props.isValid ? "white" : "rgb(255, 211, 211)"};
+    border-color: ${props => props.isValid ? "black" : colors.red};
+    background-color: ${props => props.isValid ? "white" : colors.lightRed};
     border-radius: 3px;
     width: ${props => props.fullWidth ? "100%" : "auto"};
 `
-const Textbox = ({placeholder, isValid, fullWidth}: TextboxProps) => (
-    <StyledTextbox placeholder={placeholder} isValid={isValid} fullWidth={fullWidth}>
-        
-    </StyledTextbox>
-        
-)
+const Textbox = ({placeholder, isValid, fullWidth}: TextboxProps) =>
+    <StyledTextbox 
+        placeholder={placeholder}
+        isValid={isValid}
+        fullWidth={fullWidth}
+    />
 
 export default Textbox;

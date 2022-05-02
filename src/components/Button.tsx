@@ -1,8 +1,8 @@
 import styled from 'styled-components'
+import colors from '../theme/colors'
 
 interface StyledButtonProps {
-  children: string,
-  variant?: 'primary' | 'secondary',
+  variant?: 'primary' | 'secondary'
   fullWidth?: boolean
 }
 
@@ -14,11 +14,17 @@ const StyledButton = styled.button<StyledButtonProps>`
     line-height: 50px;
     padding: 0px 20px;
     text-transform: uppercase;
-    background-color: ${props => props.variant === 'secondary' ? 'rgb(151, 176, 157)' : 'rgb(221, 182, 62)'};
+    background-color: ${props => props.variant === 'secondary' ? colors.green : colors.yellow};
     width: ${props => props.fullWidth ? '100%' : 'auto'};
 `
 
-const Button = ({children, variant, fullWidth}: StyledButtonProps) => {
+interface ButtonProps {
+  children: string,
+  variant?: 'primary' | 'secondary',
+  fullWidth?: boolean
+}
+
+const Button = ({children, variant, fullWidth}: ButtonProps) => {
   return (
     <StyledButton variant={variant} fullWidth={fullWidth}>
       {children}

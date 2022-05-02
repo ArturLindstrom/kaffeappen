@@ -7,17 +7,17 @@ const StyledLoginForm = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    & > Button {
+    & * {
         margin-top: 1rem;
     }
     `;
 
     const LoginForm = () => (
-        <form>
+        <StyledLoginForm>
             <Textbox fullWidth isValid placeholder="användarnamn"/>
             <Textbox fullWidth isValid placeholder="lösenord"/>
             <Button fullWidth>Logga in</Button>
-        </form>
+        </StyledLoginForm>
     )
 
     export default LoginForm;
